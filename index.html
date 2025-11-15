@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+  <meta charset="UTF-8" />
+  <title>Spareoversikt</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app">
+    <div class="title-row">
+      <h1>💰 Spareoversikt</h1>
+      <button id="settings-btn" class="icon-btn" aria-label="Innstillinger">⚙️</button>
+    </div>
+
+    <p class="subtitle">Kryss av én boks for hver 1.000,- du har spart.</p>
+
+    <!-- Summary (left) + goal (right) -->
+    <div class="summary-row">
+      <p id="summary" class="summary"></p>
+      <div class="summary-right">
+        <p id="goal-label" class="goal-label"></p>
+      </div>
+    </div>
+
+    <!-- Progress bar -->
+    <div class="progress">
+      <div class="progress-bar" id="progress-bar"></div>
+    </div>
+
+    <!-- Celebration message -->
+    <div id="celebration-message" class="celebration hidden"></div>
+
+    <div id="grid" class="grid"></div>
+
+    <!-- Settings modal -->
+    <div id="settings-overlay" class="overlay hidden">
+      <div class="modal" role="dialog" aria-modal="true" aria-labelledby="settings-title">
+        <h2 id="settings-title">Innstillinger</h2>
+
+        <div class="modal-row">
+          <label for="settings-goal">Sparemål (totalt beløp)</label>
+          <input id="settings-goal" type="number" min="1000" step="1000" />
+        </div>
+
+        <div class="modal-row">
+          <label for="settings-step">Beløp per boks</label>
+          <input id="settings-step" type="number" min="100" step="100" />
+        </div>
+
+        <hr class="modal-divider" />
+
+        <div class="modal-row modal-row-inline">
+          <label for="settings-confetti">
+            <input id="settings-confetti" type="checkbox" />
+            Slå på konfetti
+          </label>
+        </div>
+
+        <div class="modal-row">
+          <label for="settings-confetti-interval">
+            Konfetti-intervall (beløp per feiring)
+          </label>
+          <input id="settings-confetti-interval" type="number" min="100" step="100" />
+          <small class="hint">
+            Eksempel: 10&nbsp;000 betyr konfetti for hver 10&nbsp;000,- du har spart.
+          </small>
+        </div>
+
+        <div class="modal-actions">
+          <button id="settings-cancel" class="btn btn-secondary">Avbryt</button>
+          <button id="settings-save" class="btn btn-primary">Lagre</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
