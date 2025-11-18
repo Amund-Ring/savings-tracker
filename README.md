@@ -1,4 +1,4 @@
-# savings-tracker
+# Savings-Tracker
 A simple, customizable savings tracker with progress visuals and milestone confetti.
 
 Try it here:
